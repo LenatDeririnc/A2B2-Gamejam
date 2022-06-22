@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
-using AS.SystemInitializer.Interfaces;
+using SystemInitializer.Interfaces;
 
-namespace AS.SystemInitializer
+namespace SystemInitializer
 {
     public class SystemsContainer : IAwakeSystem, IUpdateSystem, ILateUpdateSystem
     {

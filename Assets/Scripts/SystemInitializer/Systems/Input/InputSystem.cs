@@ -1,14 +1,15 @@
-﻿using AS.SystemInitializer.Interfaces;
+﻿using SystemInitializer.Interfaces;
 
-namespace AS.SystemInitializer.Systems.Input
+namespace SystemInitializer.Systems.Input
 {
     public class InputSystem : IAwakeSystem
     {
-        private InputActions _actions;
-        
+        private InputContext _context;
+
         public void Awake()
         {
-            _actions = new InputActions();
+            _context = ContextsContainer.GetContext<InputContext>();
+            _context.actions = new InputActions();
         }
     }
 }

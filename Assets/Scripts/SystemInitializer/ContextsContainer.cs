@@ -1,20 +1,19 @@
 using System;
 using System.Collections.Generic;
-using AS.SystemInitializer.Interfaces;
 
-namespace AS.SystemInitializer
+namespace SystemInitializer
 {
     public static class ContextsContainer
     {
-        private static readonly Dictionary<Type, MonoBehaviourContext> _contexts = new Dictionary<Type, MonoBehaviourContext>();
+        private static Dictionary<Type, MonoBehaviourContext> _contexts;
         
         public static void Initialize(List<MonoBehaviourContext> contexts)
         {
+            _contexts = new Dictionary<Type, MonoBehaviourContext>();
             foreach (var context in contexts)
             {
                 var type = context.GetType();
                 _contexts[type] = context;
-                context.SystemInit();
             }
         }
 

@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using AS.SystemInitializer.Interfaces;
+using SystemInitializer.Systems.Input;
+using SystemInitializer.Systems.SceneLoading;
 using UnityEngine;
 
-namespace AS.SystemInitializer
+namespace SystemInitializer
 {
-    public class SystemsBootstrapper : MonoBehaviour
+    public class SystemsBootstrapper : SimpleSingleton<SystemsBootstrapper>
     {
         [SerializeField] 
         private List<MonoBehaviourContext> _contextsList = new List<MonoBehaviourContext>();
@@ -12,10 +13,16 @@ namespace AS.SystemInitializer
     
         private void Awake()
         {
+            InitSingleton(this, LoadSystems);
+        }
+
+        private void LoadSystems()
+        {
             ContextsContainer.Initialize(_contextsList);
 
             // NOTE: добавлять сюда все инициализации систем
-            //_systems.Add(new ...System());
+            _systems.Add(new InputSystem());
+            _systems.Add(new SceneLoadingSystem());
 
             _systems.Awake();
         }

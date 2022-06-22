@@ -1,4 +1,4 @@
-namespace AS.SystemInitializer.Interfaces
+namespace SystemInitializer.Interfaces
 {
     public interface IAwakeSystem : ISystem
     {
