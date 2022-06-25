@@ -4,11 +4,10 @@ using SystemInitializer;
 using SystemInitializer.Systems.Cinemachine;
 using SystemInitializer.Systems.Movement;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Movement
 {
-    public class MovementPoint : MonoBehaviour
+    public class MovementPoint : ButtonAction
     {
         private Transform _transform;
 
@@ -30,27 +29,16 @@ namespace Movement
         public CinemachineVirtualCamera VirtualCamera;
 
         [Space]
-        public MovementPoint ForwardPoint;
-        public MovementPoint BackPoint;
-        public MovementPoint LeftPoint;
-        public MovementPoint RightPoint;
+        public ButtonAction ForwardPoint;
+        public ButtonAction BackPoint;
+        public ButtonAction LeftPoint;
+        public ButtonAction RightPoint;
         
         [Space]
-        public Button ForwardButton;
-        public Button LeftButton;
-        public Button RightButton;
-        public Button BackButton;
-
-        private void Awake()
-        {
-            if (isStartPosition)
-            {
-                var context = ContextsContainer.GetContext<MovementContext>();
-                context.StartMovementPoint = this;
-                context.CurrentMovementPoint = this;
-                context.ResetStartingPoint?.Invoke();
-            }
-        }
+        public UnityEngine.UI.Button ForwardButton;
+        public UnityEngine.UI.Button LeftButton;
+        public UnityEngine.UI.Button RightButton;
+        public UnityEngine.UI.Button BackButton;
 
         private void OnDrawGizmos()
         {
@@ -106,5 +94,53 @@ namespace Movement
             ContextsContainer.GetContext<BrainContext>().OnReachVirtualCamera -= OnEnterCamera;
             OnExitCamera();
         }
+
+        public override void Execute()
+        {
+            var movementContext = ContextsContainer.GetContext<MovementContext>();
+            movementContext.CurrentMovementPoint.Disable();
+            movementContext.CurrentMovementPoint = this;
+            Enable(SetButtons);
+            MoveCameraToPosition();
+        }
+        
+        public void UnsetButtons()
+        {
+            if (ForwardButton != null) ForwardButton.onClick.RemoveAllListeners();
+            if (BackButton != null) BackButton.onClick.RemoveAllListeners();
+            if (LeftButton != null) LeftButton.onClick.RemoveAllListeners();
+            if (RightButton != null) RightButton.onClick.RemoveAllListeners();
+        }
+        
+        public void SetButtons()
+        {
+            if (ForwardButton != null && ForwardPoint != null) ForwardButton.onClick.AddListener(ForwardPoint.Execute);
+            if (BackButton != null && BackPoint != null) BackButton.onClick.AddListener(BackPoint.Execute);
+            if (LeftButton != null && LeftPoint != null) LeftButton.onClick.AddListener(LeftPoint.Execute);
+            if (RightButton != null && RightPoint != null) RightButton.onClick.AddListener(RightPoint.Execute);
+        }
+        
+        public void SetCameraToThisPosition()
+        {
+            var brain = ContextsContainer.GetContext<BrainContext>().Brain;
+
+            brain.enabled = false;
+            UnsetButtons();
+            Disable();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint = this;
+            Enable();
+            OnEnterCamera();
+            SetButtons();
+            brain.enabled = true;
+        }
+        
+        public void MoveCameraToPosition()
+        {
+            UnsetButtons();
+            Disable();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint = this;
+            Enable(SetButtons);
+        }
+
     }
 }
