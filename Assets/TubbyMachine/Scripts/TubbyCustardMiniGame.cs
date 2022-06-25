@@ -1,0 +1,32 @@
+﻿using System;
+using UnityEngine;
+
+namespace TubbyMachine.Scripts
+{
+    public class TubbyCustardMiniGame : MonoBehaviour
+    {
+        public TubbyCustardPanel panel;
+        public bool startTestGame;
+
+        public void StartGame(Action onFinished)
+        {
+            panel.SetInteractable(true);
+            panel.dispenserObject.onVialFilled = () =>
+            {
+                panel.SetInteractable(false);
+                onFinished?.Invoke();
+            };
+        }
+
+        private void Start()
+        {
+            if (startTestGame)
+            {
+                StartGame(() =>
+                {
+                    Debug.Log("Finished!");
+                });
+            }
+        }
+    }
+}
