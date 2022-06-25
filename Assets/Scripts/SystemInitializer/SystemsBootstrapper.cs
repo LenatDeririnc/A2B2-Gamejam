@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using SystemInitializer.Systems.Input;
+using SystemInitializer.Systems.Movement;
 using SystemInitializer.Systems.SceneLoading;
 using UnityEngine;
 
@@ -23,6 +25,7 @@ namespace SystemInitializer
             // NOTE: добавлять сюда все инициализации систем
             _systems.Add(new InputSystem());
             _systems.Add(new SceneLoadingSystem());
+            _systems.Add(new MovementSystem());
 
             _systems.Awake();
         }
@@ -40,6 +43,11 @@ namespace SystemInitializer
         private void LateUpdate()
         {
             _systems.LateUpdate();
+        }
+
+        public void OnChangeScene()
+        {
+            _systems.Terminate();
         }
     }
 }

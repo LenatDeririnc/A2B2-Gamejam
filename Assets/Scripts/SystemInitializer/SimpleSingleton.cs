@@ -5,7 +5,7 @@ namespace SystemInitializer
 {
     public abstract class SimpleSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        private static T Instance;
+        public static T Instance;
 
         protected void InitSingleton(T instance, Action firstInitAction = null)
         {

@@ -9,6 +9,9 @@ namespace SystemInitializer.Systems.SceneLoading
         {
             var curtain = ContextsContainer.GetContext<LoadingCurtainContext>();
             curtain.Init();
+
+            ContextsContainer.GetContext<SceneLoaderContext>().OnStartLoadScene +=
+                SystemsBootstrapper.Instance.OnChangeScene;
         }
     }
 }

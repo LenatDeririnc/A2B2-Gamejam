@@ -13,8 +13,11 @@ namespace SceneManager
         [SerializeField] private List<SceneLink> scenes;
         private LoadingCurtainContext LoadingCurtainContext => ContextsContainer.GetContext<LoadingCurtainContext>();
 
+        public Action OnStartLoadScene;
+
         public void LoadScene(SceneLink sceneLink)
         {
+            OnStartLoadScene?.Invoke();
             LoadingCurtainContext.Show(() => StartCoroutine(LoadSceneCoroutine(sceneLink, LoadingCurtainContext.Hide)));
         }
 
