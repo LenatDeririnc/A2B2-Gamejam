@@ -24,6 +24,7 @@ namespace Movement
         public bool isStartPosition;
 
         private Action onEnterActions;
+        private Action onExitActions;
 
         public Canvas inputCanvas;
         public CinemachineVirtualCamera VirtualCamera;
@@ -74,7 +75,8 @@ namespace Movement
                 return;
             }
 
-            this.onEnterActions = onEnterActions;
+            if (onEnterActions != null)
+                this.onEnterActions = onEnterActions;
 
             ContextsContainer.GetContext<BrainContext>().OnReachVirtualCamera += OnEnterCamera;
 
@@ -90,18 +92,23 @@ namespace Movement
                 OnExitCamera();
                 return;
             }
-            
+
             ContextsContainer.GetContext<BrainContext>().OnReachVirtualCamera -= OnEnterCamera;
             OnExitCamera();
+            
+            onExitActions?.Invoke();
         }
 
         public override void Execute()
         {
-            var movementContext = ContextsContainer.GetContext<MovementContext>();
-            movementContext.CurrentMovementPoint.Disable();
-            movementContext.CurrentMovementPoint = this;
-            Enable(SetButtons);
             MoveCameraToPosition();
+        }
+
+        public void Execute(Action onEnterAction, Action onExitAction)
+        {
+            onEnterActions = onEnterAction;
+            onExitActions = onExitAction;
+            MoveCameraToPosition(onEnterAction);
         }
         
         public void UnsetButtons()
@@ -125,8 +132,8 @@ namespace Movement
             var brain = ContextsContainer.GetContext<BrainContext>().Brain;
 
             brain.enabled = false;
-            UnsetButtons();
-            Disable();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.UnsetButtons();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.Disable();
             ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint = this;
             Enable();
             OnEnterCamera();
@@ -136,10 +143,18 @@ namespace Movement
         
         public void MoveCameraToPosition()
         {
-            UnsetButtons();
-            Disable();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.UnsetButtons();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.Disable();
             ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint = this;
             Enable(SetButtons);
+        }
+        
+        public void MoveCameraToPosition(Action onReachAction)
+        {
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.UnsetButtons();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint.Disable();
+            ContextsContainer.GetContext<MovementContext>().CurrentMovementPoint = this;
+            Enable(onReachAction);
         }
 
     }
