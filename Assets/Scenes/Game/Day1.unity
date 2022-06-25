@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e29887f21d4a00a9aba774f0d0d9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextGame: {fileID: 1560280216}
   point: {fileID: 801856674}
   isDone: 0
 --- !u!1 &835534528 stripped
@@ -376,8 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1feb2a758044adb9b5f5a79ea1ad33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMiniGame: {fileID: 1947128646}
-  backAction: {fileID: 0}
+  MG1: {fileID: 1947128646}
+  MG2: {fileID: 801856675}
+  MG3: {fileID: 1560280216}
 --- !u!1 &1186553262
 GameObject:
   m_ObjectHideFlags: 1
@@ -485,7 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e29887f21d4a00a9aba774f0d0d9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextGame: {fileID: 0}
   point: {fileID: 1560280218}
   isDone: 0
 --- !u!114 &1560280218 stripped
@@ -771,7 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e29887f21d4a00a9aba774f0d0d9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextGame: {fileID: 801856675}
   point: {fileID: 1947128645}
   isDone: 0
 --- !u!1001 &5687058081706940373
