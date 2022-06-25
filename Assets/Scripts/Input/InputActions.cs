@@ -22,9 +22,148 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""InputActions"",
-    ""maps"": [],
+    ""maps"": [
+        {
+            ""name"": ""CameraMovement"",
+            ""id"": ""dc13330f-6086-4483-928d-2ff2bbb36bb5"",
+            ""actions"": [
+                {
+                    ""name"": ""MoveForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""726b3cdd-59a6-4d5c-880c-3ed10bdec253"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbe69044-4fbb-4251-ba2a-9eb88ce3ee83"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""df7fccbf-c437-4f49-b79b-7b3a47261cff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveBack"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0a63708-71b8-4e16-943b-19a671d93f19"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2b2b09dd-b933-470b-9e7d-17acb0c2cbfe"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d8a75af-9a95-4098-9d3e-825dd35352bf"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b48dda76-8cc1-4e99-92d5-9dcfc175c190"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1745be4c-63d0-47a5-a771-7fdd1dd390b1"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34fa9eb3-2d13-493d-bd58-09ae68316b36"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db2fba1e-0307-4142-8b5d-570d9fb14746"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dcd82ba9-5771-492a-bde0-f67ca870eae1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveBack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c711095-5ed9-43e3-815a-6cee2972348f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveBack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
     ""controlSchemes"": []
 }");
+        // CameraMovement
+        m_CameraMovement = asset.FindActionMap("CameraMovement", throwIfNotFound: true);
+        m_CameraMovement_MoveForward = m_CameraMovement.FindAction("MoveForward", throwIfNotFound: true);
+        m_CameraMovement_MoveLeft = m_CameraMovement.FindAction("MoveLeft", throwIfNotFound: true);
+        m_CameraMovement_MoveRight = m_CameraMovement.FindAction("MoveRight", throwIfNotFound: true);
+        m_CameraMovement_MoveBack = m_CameraMovement.FindAction("MoveBack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -79,5 +218,69 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // CameraMovement
+    private readonly InputActionMap m_CameraMovement;
+    private ICameraMovementActions m_CameraMovementActionsCallbackInterface;
+    private readonly InputAction m_CameraMovement_MoveForward;
+    private readonly InputAction m_CameraMovement_MoveLeft;
+    private readonly InputAction m_CameraMovement_MoveRight;
+    private readonly InputAction m_CameraMovement_MoveBack;
+    public struct CameraMovementActions
+    {
+        private @InputActions m_Wrapper;
+        public CameraMovementActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveForward => m_Wrapper.m_CameraMovement_MoveForward;
+        public InputAction @MoveLeft => m_Wrapper.m_CameraMovement_MoveLeft;
+        public InputAction @MoveRight => m_Wrapper.m_CameraMovement_MoveRight;
+        public InputAction @MoveBack => m_Wrapper.m_CameraMovement_MoveBack;
+        public InputActionMap Get() { return m_Wrapper.m_CameraMovement; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CameraMovementActions set) { return set.Get(); }
+        public void SetCallbacks(ICameraMovementActions instance)
+        {
+            if (m_Wrapper.m_CameraMovementActionsCallbackInterface != null)
+            {
+                @MoveForward.started -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveForward;
+                @MoveForward.performed -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveForward;
+                @MoveForward.canceled -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveForward;
+                @MoveLeft.started -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.performed -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.canceled -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveLeft;
+                @MoveRight.started -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveRight;
+                @MoveRight.performed -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveRight;
+                @MoveRight.canceled -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveRight;
+                @MoveBack.started -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveBack;
+                @MoveBack.performed -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveBack;
+                @MoveBack.canceled -= m_Wrapper.m_CameraMovementActionsCallbackInterface.OnMoveBack;
+            }
+            m_Wrapper.m_CameraMovementActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @MoveForward.started += instance.OnMoveForward;
+                @MoveForward.performed += instance.OnMoveForward;
+                @MoveForward.canceled += instance.OnMoveForward;
+                @MoveLeft.started += instance.OnMoveLeft;
+                @MoveLeft.performed += instance.OnMoveLeft;
+                @MoveLeft.canceled += instance.OnMoveLeft;
+                @MoveRight.started += instance.OnMoveRight;
+                @MoveRight.performed += instance.OnMoveRight;
+                @MoveRight.canceled += instance.OnMoveRight;
+                @MoveBack.started += instance.OnMoveBack;
+                @MoveBack.performed += instance.OnMoveBack;
+                @MoveBack.canceled += instance.OnMoveBack;
+            }
+        }
+    }
+    public CameraMovementActions @CameraMovement => new CameraMovementActions(this);
+    public interface ICameraMovementActions
+    {
+        void OnMoveForward(InputAction.CallbackContext context);
+        void OnMoveLeft(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
+        void OnMoveBack(InputAction.CallbackContext context);
     }
 }

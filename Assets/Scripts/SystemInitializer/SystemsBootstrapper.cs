@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using SystemInitializer.Systems.Cinemachine;
 using SystemInitializer.Systems.Input;
+using SystemInitializer.Systems.Movement;
 using SystemInitializer.Systems.SceneLoading;
 using UnityEngine;
 
@@ -40,6 +43,11 @@ namespace SystemInitializer
         private void LateUpdate()
         {
             _systems.LateUpdate();
+        }
+
+        public void OnChangeScene()
+        {
+            _systems.Terminate();
         }
     }
 }
