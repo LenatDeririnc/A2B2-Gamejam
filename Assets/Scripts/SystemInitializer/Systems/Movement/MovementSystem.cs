@@ -1,8 +1,8 @@
 ﻿using Cinemachine;
 using Movement;
 using SystemInitializer.Interfaces;
+using SystemInitializer.Systems.Cinemachine;
 using SystemInitializer.Systems.Input;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace SystemInitializer.Systems.Movement
@@ -21,13 +21,14 @@ namespace SystemInitializer.Systems.Movement
         public void Awake()
         {
             var movementContext = ContextsContainer.GetContext<MovementContext>();
+            var brainContext = ContextsContainer.GetContext<BrainContext>();
             var inputContext = ContextsContainer.GetContext<InputContext>();
             
             if (movementContext == null || !movementContext.enabled)
                 return;
 
             currentMovementPoint = movementContext.StartMovementPoint;
-            brain = movementContext.Brain;
+            brain = brainContext.Brain;
 
             inputContext.actions.CameraMovement.MoveForward.performed += MoveForward;
             inputContext.actions.CameraMovement.MoveBack.performed += MoveBackward;
@@ -49,20 +50,40 @@ namespace SystemInitializer.Systems.Movement
             inputContext.actions.CameraMovement.Disable();
         }
 
-        public void SetCameraToPosition(MovementPoint point)
+        private void SetCameraToPosition(MovementPoint point)
         {
             brain.enabled = false;
             MoveCameraToPosition(point);
             brain.enabled = true;
         }
 
-        public void MoveCameraToPosition(MovementPoint point)
+        private void MoveCameraToPosition(MovementPoint point)
         {
+            UnsetButtons(currentMovementPoint);
             currentMovementPoint.Disable();
-            point.Enable();
+            currentMovementPoint = point;
+            currentMovementPoint.Enable(() => SetButtons(currentMovementPoint));
         }
 
-        public void MoveForward(InputAction.CallbackContext callbackContext)
+        private void UnsetButtons(MovementPoint point)
+        {
+            if (point.ForwardButton != null) point.ForwardButton.onClick.RemoveAllListeners();
+            if (point.BackButton != null) point.BackButton.onClick.RemoveAllListeners();
+            if (point.LeftButton != null) point.LeftButton.onClick.RemoveAllListeners();
+            if (point.RightButton != null) point.RightButton.onClick.RemoveAllListeners();
+        }
+
+        private void SetButtons(MovementPoint point)
+        {
+            if (point.ForwardButton != null) point.ForwardButton.onClick.AddListener(MoveForward);
+            if (point.BackButton != null) point.BackButton.onClick.AddListener(MoveBackward);
+            if (point.LeftButton != null) point.LeftButton.onClick.AddListener(MoveLeft);
+            if (point.RightButton != null) point.RightButton.onClick.AddListener(MoveRight);
+        }
+
+        private void MoveForward(InputAction.CallbackContext callbackContext) => MoveForward();
+
+        private void MoveForward()
         {
             if (currentMovementPoint == null)
                 return;
@@ -71,11 +92,11 @@ namespace SystemInitializer.Systems.Movement
                 return;
             
             MoveCameraToPosition(currentMovementPoint.ForwardPoint);
-
-            currentMovementPoint = currentMovementPoint.ForwardPoint;
         }
 
-        public void MoveBackward(InputAction.CallbackContext callbackContext)
+        private void MoveBackward(InputAction.CallbackContext callbackContext) => MoveBackward();
+
+        private void MoveBackward()
         {
             if (currentMovementPoint == null)
                 return;
@@ -84,11 +105,12 @@ namespace SystemInitializer.Systems.Movement
                 return;
             
             MoveCameraToPosition(currentMovementPoint.BackPoint);
-
-            currentMovementPoint = currentMovementPoint.BackPoint;
         }
 
-        public void MoveLeft(InputAction.CallbackContext callbackContext)
+
+        private void MoveLeft(InputAction.CallbackContext callbackContext) => MoveLeft();
+
+        private void MoveLeft()
         {
             if (currentMovementPoint == null)
                 return;
@@ -97,11 +119,11 @@ namespace SystemInitializer.Systems.Movement
                 return;
             
             MoveCameraToPosition(currentMovementPoint.LeftPoint);
-
-            currentMovementPoint = currentMovementPoint.LeftPoint;
         }
 
-        public void MoveRight(InputAction.CallbackContext callbackContext)
+        private void MoveRight(InputAction.CallbackContext callbackContext) => MoveRight();
+
+        private void MoveRight()
         {
             if (currentMovementPoint == null)
                 return;
@@ -110,8 +132,6 @@ namespace SystemInitializer.Systems.Movement
                 return;
             
             MoveCameraToPosition(currentMovementPoint.RightPoint);
-
-            currentMovementPoint = currentMovementPoint.RightPoint;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SystemInitializer.Systems.Cinemachine;
 using SystemInitializer.Systems.Input;
 using SystemInitializer.Systems.Movement;
 using SystemInitializer.Systems.SceneLoading;
@@ -26,6 +27,7 @@ namespace SystemInitializer
             _systems.Add(new InputSystem());
             _systems.Add(new SceneLoadingSystem());
             _systems.Add(new MovementSystem());
+            _systems.Add(new BrainSystem());
 
             _systems.Awake();
         }

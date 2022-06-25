@@ -1,6 +1,6 @@
-﻿using UnityEditor;
+﻿using Movement;
+using UnityEditor;
 using UnityEngine;
-using UVariableSystem;
 
 namespace SystemInitializer.Systems.Movement.Editor
 {
@@ -11,10 +11,19 @@ namespace SystemInitializer.Systems.Movement.Editor
         {
             base.OnInspectorGUI();
             
+            var targetValue = (MovementContext)target;
+            
+            if (GUILayout.Button("Disable All Positions"))
+            {
+                var points = FindObjectsOfType<MovementPoint>();
+                foreach (var point in points)
+                {
+                    point.Disable();
+                }
+            };
+            
             if (!Application.isPlaying)
                 return;
-
-            var targetValue = (MovementContext)target;
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Current Point: ", targetValue.CurrentMovementPoint.name);
         }

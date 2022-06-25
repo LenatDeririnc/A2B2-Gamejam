@@ -10,9 +10,16 @@ namespace SceneManager
         public CanvasGroup canvasGroup;
         public float fadeSpeed = 1;
         public bool HideCurtainOnStart;
+        public bool DisableOnStart;
 
         public void Init()
         {
+            if (DisableOnStart)
+            {
+                SetTransparency(0);
+                canvasGroup.gameObject.SetActive(false);
+            }
+            
             if (HideCurtainOnStart)
             {
                 SetTransparency(1);
