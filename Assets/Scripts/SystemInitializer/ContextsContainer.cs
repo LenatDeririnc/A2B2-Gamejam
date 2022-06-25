@@ -17,6 +17,15 @@ namespace SystemInitializer
             }
         }
 
+        public static void OverrideContexts(List<MonoBehaviourContext> contexts)
+        {
+            foreach (var context in contexts)
+            {
+                var type = context.GetType();
+                _contexts[type] = context;
+            }
+        }
+
         public static void AddContext<T>(T context)
         {
             _contexts[typeof(T)] = context as MonoBehaviourContext;

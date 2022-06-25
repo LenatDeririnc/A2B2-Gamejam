@@ -16,44 +16,50 @@ namespace SystemInitializer.Systems.Movement
             set => MovementContext.CurrentMovementPoint = value;
         }
 
-        private CinemachineBrain brain;
+        private CinemachineBrain brain => ContextsContainer.GetContext<BrainContext>().Brain;
         
         public void Awake()
         {
             var movementContext = ContextsContainer.GetContext<MovementContext>();
-            var brainContext = ContextsContainer.GetContext<BrainContext>();
-            var inputContext = ContextsContainer.GetContext<InputContext>();
+            movementContext.ResetStartingPoint += ResetStartingPoint;
             
-            if (movementContext == null || !movementContext.enabled)
-                return;
-
-            currentMovementPoint = movementContext.StartMovementPoint;
-            brain = brainContext.Brain;
-
+            var inputContext = ContextsContainer.GetContext<InputContext>();
             inputContext.actions.CameraMovement.MoveForward.performed += MoveForward;
             inputContext.actions.CameraMovement.MoveBack.performed += MoveBackward;
             inputContext.actions.CameraMovement.MoveLeft.performed += MoveLeft;
             inputContext.actions.CameraMovement.MoveRight.performed += MoveRight;
-            inputContext.actions.CameraMovement.Enable();
-            
-            SetCameraToPosition(currentMovementPoint);
         }
-        
+
         public void Terminate()
         {
             var inputContext = ContextsContainer.GetContext<InputContext>();
-            
-            inputContext.actions.CameraMovement.MoveForward.performed -= MoveForward;
-            inputContext.actions.CameraMovement.MoveBack.performed -= MoveBackward;
-            inputContext.actions.CameraMovement.MoveLeft.performed -= MoveLeft;
-            inputContext.actions.CameraMovement.MoveRight.performed -= MoveRight;
             inputContext.actions.CameraMovement.Disable();
+        }
+
+        private void ResetStartingPoint()
+        {
+            var movementContext = ContextsContainer.GetContext<MovementContext>();
+            var inputContext = ContextsContainer.GetContext<InputContext>();
+            
+            if (movementContext == null)
+                return;
+
+            currentMovementPoint = movementContext.StartMovementPoint;
+
+            inputContext.actions.CameraMovement.Enable();
+            
+            SetCameraToPosition(currentMovementPoint);
         }
 
         private void SetCameraToPosition(MovementPoint point)
         {
             brain.enabled = false;
-            MoveCameraToPosition(point);
+            UnsetButtons(currentMovementPoint);
+            currentMovementPoint.Disable();
+            currentMovementPoint = point;
+            currentMovementPoint.Enable(() => SetButtons(currentMovementPoint));
+            currentMovementPoint.OnEnterCamera();
+            SetButtons(currentMovementPoint);
             brain.enabled = true;
         }
 
@@ -67,6 +73,9 @@ namespace SystemInitializer.Systems.Movement
 
         private void UnsetButtons(MovementPoint point)
         {
+            if (point == null)
+                return;
+            
             if (point.ForwardButton != null) point.ForwardButton.onClick.RemoveAllListeners();
             if (point.BackButton != null) point.BackButton.onClick.RemoveAllListeners();
             if (point.LeftButton != null) point.LeftButton.onClick.RemoveAllListeners();
@@ -75,6 +84,9 @@ namespace SystemInitializer.Systems.Movement
 
         private void SetButtons(MovementPoint point)
         {
+            if (point == null)
+                return;
+            
             if (point.ForwardButton != null) point.ForwardButton.onClick.AddListener(MoveForward);
             if (point.BackButton != null) point.BackButton.onClick.AddListener(MoveBackward);
             if (point.LeftButton != null) point.LeftButton.onClick.AddListener(MoveLeft);

@@ -2,6 +2,7 @@
 using Cinemachine;
 using SystemInitializer;
 using SystemInitializer.Systems.Cinemachine;
+using SystemInitializer.Systems.Movement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,8 @@ namespace Movement
             }
         }
 
+        public bool isStartPosition;
+
         private Action onEnterActions;
 
         public Canvas inputCanvas;
@@ -37,6 +40,17 @@ namespace Movement
         public Button LeftButton;
         public Button RightButton;
         public Button BackButton;
+
+        private void Awake()
+        {
+            if (isStartPosition)
+            {
+                var context = ContextsContainer.GetContext<MovementContext>();
+                context.StartMovementPoint = this;
+                context.CurrentMovementPoint = this;
+                context.ResetStartingPoint?.Invoke();
+            }
+        }
 
         private void OnDrawGizmos()
         {
@@ -75,7 +89,7 @@ namespace Movement
             this.onEnterActions = onEnterActions;
 
             ContextsContainer.GetContext<BrainContext>().OnReachVirtualCamera += OnEnterCamera;
-            
+
             VirtualCamera.Priority = 100;
         }
 

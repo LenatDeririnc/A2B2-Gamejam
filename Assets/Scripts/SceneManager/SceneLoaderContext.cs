@@ -1,16 +1,13 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using SceneManager.ScriptableObjects;
 using SystemInitializer;
-using SystemInitializer.Systems.SceneLoading;
 using UnityEngine;
 
 namespace SceneManager
 {
     public class SceneLoaderContext : MonoBehaviourContext
     {
-        [SerializeField] private List<SceneLink> scenes;
         private LoadingCurtainContext LoadingCurtainContext => ContextsContainer.GetContext<LoadingCurtainContext>();
 
         public Action OnStartLoadScene;

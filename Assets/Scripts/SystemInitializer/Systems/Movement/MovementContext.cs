@@ -1,4 +1,5 @@
-﻿using Movement;
+﻿using System;
+using Movement;
 using UnityEngine;
 
 namespace SystemInitializer.Systems.Movement
@@ -7,5 +8,7 @@ namespace SystemInitializer.Systems.Movement
     {
         public MovementPoint StartMovementPoint;
         [HideInInspector] public MovementPoint CurrentMovementPoint;
+
+        public Action ResetStartingPoint;
     }
 }

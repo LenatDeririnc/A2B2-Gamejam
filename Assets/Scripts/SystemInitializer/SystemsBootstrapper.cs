@@ -26,8 +26,6 @@ namespace SystemInitializer
             // NOTE: добавлять сюда все инициализации систем
             _systems.Add(new InputSystem());
             _systems.Add(new SceneLoadingSystem());
-            _systems.Add(new MovementSystem());
-            _systems.Add(new BrainSystem());
 
             _systems.Awake();
         }

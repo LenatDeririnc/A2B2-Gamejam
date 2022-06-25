@@ -25,6 +25,10 @@ namespace SystemInitializer.Systems.Movement.Editor
             if (!Application.isPlaying)
                 return;
             EditorGUILayout.Space();
+            
+            if (targetValue.CurrentMovementPoint == null)
+                return;
+            
             EditorGUILayout.LabelField("Current Point: ", targetValue.CurrentMovementPoint.name);
         }
     }
