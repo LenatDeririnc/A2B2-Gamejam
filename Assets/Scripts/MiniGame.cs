@@ -9,6 +9,8 @@ public class MiniGame : ButtonAction
     public ButtonAction nextAction;
     public bool isDone;
 
+    public UnityEvent OnEnterAction;
+
     public UnityEvent AfterSuccessAction;
 
     public override void Execute()
@@ -24,6 +26,7 @@ public class MiniGame : ButtonAction
         void OnEnterAction()
         {
             DebugActionsCanvas.gameObject.SetActive(true);
+            this.OnEnterAction.Invoke();
         }
 
         void OnExitAction()

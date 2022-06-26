@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TubbyMachine.Scripts
 {
@@ -8,6 +9,8 @@ namespace TubbyMachine.Scripts
         public TubbyCustardPanel panel;
         public bool startTestGame;
 
+        public UnityEvent OnFinishedEvents;
+        
         public void StartGame(Action onFinished)
         {
             panel.SetInteractable(true);
@@ -16,6 +19,11 @@ namespace TubbyMachine.Scripts
                 panel.SetInteractable(false);
                 onFinished?.Invoke();
             };
+        }
+
+        public void StartGame()
+        {
+            StartGame(() => OnFinishedEvents.Invoke());
         }
 
         private void Start()
