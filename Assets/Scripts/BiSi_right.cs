@@ -95,6 +95,7 @@ public class BiSi_right : MonoBehaviour
         Debug.Log("SequenceSuccessView");
         ReplaceCurrentCanvas(CanvasMainSequenceIsReady);
         CharactersContext.CurrentCharacter().Speech.UpdateDialogue();
+        BiSiContext.Fog.SetActive(true);
         BiSiContext.SetLeftActive();
     }
 

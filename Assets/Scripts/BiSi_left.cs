@@ -112,6 +112,7 @@ public class BiSi_left : MonoBehaviour
         SetImage(CharactersContext.CurrentCharacter().InfoImage);
         
         BiSiContext.SetRightActive();
+        BiSiContext.Fog.SetActive(false);
     }
 
     private void SetImage(Sprite value)

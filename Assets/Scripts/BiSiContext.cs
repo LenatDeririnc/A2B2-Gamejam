@@ -1,9 +1,12 @@
 ﻿using SystemInitializer;
+using UnityEngine;
 
 public class BiSiContext : MonoBehaviourContext
 {
     public BiSi_right biSiRight;
     public BiSi_left biSiLeft;
+
+    public GameObject Fog;
     
     public void SetReadyForInput()
     {
