@@ -3658,6 +3658,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13.27
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 81eeb812b4387d1478c0bfa5cf74e984, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b214fbdda58b44baf3213e61e99bb, type: 2}
     - target: {fileID: 919132149155446097, guid: 81eeb812b4387d1478c0bfa5cf74e984, type: 3}
       propertyPath: m_Name
       value: Board Paper
@@ -4736,7 +4740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0433eea1fc4819d47b4a7cadcc3a078c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3213d50de8355324cb0425cfcb4c084f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8923,7 +8927,7 @@ PrefabInstance:
     - target: {fileID: 937720714117997874, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: NextScene
       value: 
-      objectReference: {fileID: 11400000, guid: 31357fd691fa99b4ab97e92b9224127a, type: 2}
+      objectReference: {fileID: 11400000, guid: a5222ceca0ff4df4cb36593fe1f63ba8, type: 2}
     - target: {fileID: 982506091245786064, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
@@ -9024,10 +9028,35 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
       objectReference: {fileID: 0}
+    - target: {fileID: 7275222566599734931, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 12aa461ca52185b42a6c6578c47a8fc3, type: 3}
     - target: {fileID: 7622301544997258245, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833617, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "You know, getting some fur ain\u2019t that bad, at least I\u2019m always
+        warm."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833617, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 70dafa1b44b2de54fbb538cb8ab11d6c, type: 3}
+    - target: {fileID: 8099360968704833622, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "Meoh, is there something my ears?! What\u2019s meoing on with me?!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833622, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cb0129ef848bd04a851e4347b31d65b, type: 3}
     - target: {fileID: 8099360969431794116, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Name
       value: OnSceneLoadSystems
@@ -9084,6 +9113,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384246, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c3900d8d041379442b5603cb32081f1e, type: 3}
+    - target: {fileID: 8099360969686384246, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e67dbb21745ff2438bea0205ea8cddd, type: 2}
     - target: {fileID: 8099360970003160589, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: field of view
       value: 40
@@ -9116,7 +9165,101 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.2527241
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360970398043550, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 32213
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970398043550, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: a27ab62f684952e429d013ac405c3f5f, type: 3}
+    - target: {fileID: 8099360970520951304, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 23132
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970520951304, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 21911361502e0ed4c9dac2eed6413fb3, type: 3}
+    - target: {fileID: 8099360970522329476, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "Aaaaaghh! AaaAguuhggh!! Princess!! Muigi!!\r\n\r\nMushroom\u2026. Kingdom\u2026.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970522329476, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: eca6de050781bb94391ee36f31daaf64, type: 3}
+    - target: {fileID: 8099360970522329480, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "T-they kept asking me to come here\u2026 And my head kept getting bigger\u2026
+        Probably should stop using those mushrooms."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970522329480, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2c4cb810d5e17e438f7381b828a2d96, type: 3}
+    - target: {fileID: 8099360970527142896, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 31231
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970527142896, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e9212d366d59cc439d182ea571ee97f, type: 3}
     - target: {fileID: 8099360970585871357, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0472463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0472463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0472463
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871359, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28da9693c10e9134c8e2d1705fa8ef52, type: 3}
+    - target: {fileID: 8099360970585871359, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b30a57aa0aaba84dbbda7ee377601a8, type: 2}
+    - target: {fileID: 8099360970643400580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "Sonova\u2026 Whatever. I don\u2019t even care at this point."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e5274c5083578847bd342c8a09a731a, type: 3}
+    - target: {fileID: 8099360970643400583, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "This place is familiar\u2026 Boss told me i had to come here for some
+        reason, and i\u2019ll get called."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400583, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 39a70bc660e9a3c47a2858d9d0187956, type: 3}
+    - target: {fileID: 8099360970643400585, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970712777648, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdedcaae86833c343bb6dc1030f7c082, type: 3}
+    - target: {fileID: 8099360970712777648, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f64794c4d27f704681404ac85ccd74d, type: 2}
+    - target: {fileID: 8099360970712777654, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
