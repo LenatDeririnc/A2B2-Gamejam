@@ -6,13 +6,26 @@ namespace Movement
     public class SpeechAction : ButtonAction
     {
         public Flowchart Flowchart;
-        public string StartBlockName = "Start";
+        public string FirstDialogue = "FistDialogue";
+        public string SecondDialogue = "SecondDialogue";
+
+        private string currentDialogue;
 
         public UnityEvent EventAfterSpeech;
 
+        private void Awake()
+        {
+            currentDialogue = FirstDialogue;
+        }
+
         public override void Execute()
         {
-            Flowchart.ExecuteBlock(StartBlockName);
+            Flowchart.ExecuteBlock(currentDialogue);
+        }
+
+        public void UpdateDialogue()
+        {
+            currentDialogue = SecondDialogue;
         }
     }
 }

@@ -37,10 +37,10 @@ namespace Movement
 
         public void SetButtons()
         {
-            if (ForwardButton != null) ForwardButton.onClick.AddListener(() => ExecuteNextPoint(ForwardPoint));
-            if (BackButton != null) BackButton.onClick.AddListener(() => ExecuteNextPoint(BackPoint));
-            if (LeftButton != null) LeftButton.onClick.AddListener(() => ExecuteNextPoint(LeftPoint));
-            if (RightButton != null) RightButton.onClick.AddListener(() => ExecuteNextPoint(RightPoint));
+            ForwardButton.onClick.AddListener(() => ExecuteNextPoint(ForwardPoint));
+            BackButton.onClick.AddListener(() => ExecuteNextPoint(BackPoint));
+            LeftButton.onClick.AddListener(() => ExecuteNextPoint(LeftPoint));
+            RightButton.onClick.AddListener(() => ExecuteNextPoint(RightPoint));
         }
 
         public override void Execute()
@@ -93,10 +93,10 @@ namespace Movement
             inputCanvas.enabled = true;
             onEnterActions?.Invoke();
             
-            ForwardButton.gameObject.SetActive(ForwardPoint != null);
-            BackButton.gameObject.SetActive(BackPoint != null);
-            LeftButton.gameObject.SetActive(LeftPoint != null);
-            RightButton.gameObject.SetActive(RightPoint != null);
+            ForwardButton.gameObject.SetActive(ForwardPoint != null && ForwardPoint.IsEnabled());
+            BackButton.gameObject.SetActive(BackPoint != null && BackPoint.IsEnabled());
+            LeftButton.gameObject.SetActive(LeftPoint != null && LeftPoint.IsEnabled());
+            RightButton.gameObject.SetActive(RightPoint != null && RightPoint.IsEnabled());
         }
 
         public void OnExitCamera()
@@ -123,6 +123,9 @@ namespace Movement
         private void ExecuteNextPoint(ButtonAction button)
         {
             if (button == null)
+                return;
+            
+            if (!button.IsEnabled())
                 return;
             
             Disable();

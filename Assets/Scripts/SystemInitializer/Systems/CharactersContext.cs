@@ -2,6 +2,14 @@
 {
     public class CharactersContext : MonoBehaviourContext
     {
-        public Character character1;
+        public int currentCharacterIndex;
+        public Character[] characters;
+
+        public Character CurrentCharacter()
+        {
+            if (currentCharacterIndex < 0 || currentCharacterIndex >= characters.Length)
+                return null;
+            return characters[currentCharacterIndex];
+        }
     }
 }

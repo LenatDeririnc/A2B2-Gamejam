@@ -2,6 +2,7 @@
 using SceneManager;
 using SceneManager.ScriptableObjects;
 using SystemInitializer;
+using SystemInitializer.Systems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class BiSi_right : MonoBehaviour
     public SceneLink NextScene;
     private MiniGamesContext MiniGamesContext => ContextsContainer.GetContext<MiniGamesContext>();
     private BiSiContext BiSiContext => ContextsContainer.GetContext<BiSiContext>();
+    private CharactersContext CharactersContext => ContextsContainer.GetContext<CharactersContext>();
     
     public BiSiButton redButton;
     public BiSiButton greenButton;
@@ -92,6 +94,7 @@ public class BiSi_right : MonoBehaviour
     {
         Debug.Log("SequenceSuccessView");
         ReplaceCurrentCanvas(CanvasMainSequenceIsReady);
+        CharactersContext.CurrentCharacter().Speech.UpdateDialogue();
         BiSiContext.SetLeftActive();
     }
 
