@@ -7652,8 +7652,8 @@ GameObject:
   - component: {fileID: 1195625443}
   - component: {fileID: 1195625442}
   - component: {fileID: 1195625441}
-  - component: {fileID: 1195625440}
   - component: {fileID: 1195625444}
+  - component: {fileID: 1195625445}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7676,21 +7676,6 @@ Transform:
   m_Father: {fileID: 1191754139}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1195625440
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195625438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9674baaf944997840d1b23e068652c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  Speech: {fileID: 1191754141}
 --- !u!114 &1195625441
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7734,7 +7719,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 60
+    width: 78.13187
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7745,7 +7730,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1195625444}
   - {fileID: 1195625441}
-  - {fileID: 1195625440}
+  - {fileID: 1195625445}
   suppressAllAutoSelections: 0
 --- !u!114 &1195625443
 MonoBehaviour:
@@ -7760,7 +7745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 263.09668, y: 151.18343}
+  scrollPos: {x: 240.55591, y: 84.696365}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -7811,6 +7796,21 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &1195625445
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195625438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9674baaf944997840d1b23e068652c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  indentLevel: 0
+  Speech: {fileID: 1191754141}
 --- !u!1 &1198887366
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,6 +8166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Brain: {fileID: 1616237662}
+  isStartReached: 0
+  isReached: 0
+  checkNextFrame: 0
 --- !u!1001 &1286137853
 PrefabInstance:
   m_ObjectHideFlags: 0
