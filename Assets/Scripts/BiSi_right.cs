@@ -12,7 +12,10 @@ public class BiSi_right : MonoBehaviour
     private MiniGamesContext MiniGamesContext => ContextsContainer.GetContext<MiniGamesContext>();
     private BiSiContext BiSiContext => ContextsContainer.GetContext<BiSiContext>();
     private CharactersContext CharactersContext => ContextsContainer.GetContext<CharactersContext>();
-    
+
+    public AudioSource Source;
+    public AudioClip Clip;
+
     public BiSiButton redButton;
     public BiSiButton greenButton;
     public BiSiButton blueButton;
@@ -96,6 +99,7 @@ public class BiSi_right : MonoBehaviour
         ReplaceCurrentCanvas(CanvasMainSequenceIsReady);
         CharactersContext.CurrentCharacter().Speech.UpdateDialogue();
         BiSiContext.Fog.SetActive(true);
+        Source.PlayOneShot(Clip);
         BiSiContext.SetLeftActive();
     }
 
