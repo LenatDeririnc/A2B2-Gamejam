@@ -1,7 +1,9 @@
 ﻿using System.Collections;
+using Fungus;
 using SystemInitializer;
 using SystemInitializer.Systems;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BiSi_left : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class BiSi_left : MonoBehaviour
     public GameObject CanvasErrorMiniGame;
     public GameObject CanvasErrorButtonIsPressed;
     public GameObject CanvasErrorPersonsDone;
+
+    public Image InfoImage;
     
     private GameObject CurrentCanvasMain;
     private GameObject CurrentCanvasError;
@@ -25,7 +29,7 @@ public class BiSi_left : MonoBehaviour
     public BiSiButton nextButton;
     
     public bool IsWaitingInput;
-    
+
     public void Awake()
     {
         nextButton.Action += NextButtonAction;
@@ -99,8 +103,15 @@ public class BiSi_left : MonoBehaviour
         
         if (CharactersContext.currentCharacterIndex < CharactersContext.characters.Length)
             CharactersContext.CurrentCharacter().gameObject.SetActive(true);
+
+        SetImage(CharactersContext.CurrentCharacter().InfoImage);
         
         BiSiContext.SetRightActive();
+    }
+
+    private void SetImage(Sprite value)
+    {
+        InfoImage.sprite = value;
     }
 
     public bool CheckResult(string result)

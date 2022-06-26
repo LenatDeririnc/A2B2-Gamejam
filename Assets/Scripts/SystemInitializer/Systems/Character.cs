@@ -8,6 +8,7 @@ namespace SystemInitializer.Systems
         public SpriteRenderer Sprite;
         public SpeechAction Speech;
         public string Sequence;
+        public Sprite InfoImage;
         public bool skip;
     }
 }
