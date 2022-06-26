@@ -31,7 +31,8 @@ namespace CrystalCrusher.Scripts
 
         public Action onGameCompleted;
 
-        private void Awake()
+
+        public void StartMiniGame()
         {
             if(playWelcome) 
                 BeginWelcomeSequence();

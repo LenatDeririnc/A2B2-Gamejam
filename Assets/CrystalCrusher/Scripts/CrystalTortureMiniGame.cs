@@ -20,6 +20,7 @@ namespace CrystalCrusher.Scripts
         public void StartGame(Action onComplete)
         {
             tortureRoom.onGameCompleted = onComplete;
+            tortureRoom.StartMiniGame();
         }
     }
 }
