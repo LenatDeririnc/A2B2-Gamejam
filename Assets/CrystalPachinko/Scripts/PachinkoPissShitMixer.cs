@@ -80,6 +80,7 @@ public class PachinkoPissShitMixer : MonoBehaviour
         animator.SetTrigger("Finished");
         yield return new WaitForSeconds(1f);
         onComplete?.Invoke();
+        onComplete = null;
     }
 
     private void OnDrawGizmos()

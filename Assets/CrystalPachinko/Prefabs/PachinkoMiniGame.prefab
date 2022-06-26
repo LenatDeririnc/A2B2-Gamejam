@@ -15192,6 +15192,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 3271867237825603944}
+  handle: {fileID: 0}
+  OnEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3278135869795979732
 GameObject:
   m_ObjectHideFlags: 0
