@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: CRTEffectVolume
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 8171234711085164247}
+--- !u!114 &8171234711085164247
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93dbc4cc661ffa44ab26d55b3c581099, type: 3}
+  m_Name: CRTPostEffect
+  m_EditorClassIdentifier: 
+  active: 1
+  FisheyeIntensity:
+    m_OverrideState: 1
+    m_Value: 1
+  ZoomIntensity:
+    m_OverrideState: 1
+    m_Value: 0.1
+  CRTTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 623b9081e8445a64c95326ef71c9c3f8, type: 3}
+  CRTTextureTiling:
+    m_OverrideState: 1
+    m_Value: 100
+  CRTVisibility:
+    m_OverrideState: 1
+    m_Value: 1
+  NoiseTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: bf25cd6288e2c8d43854a61a8496a830, type: 3}
+  NoiseTextureIntensity:
+    m_OverrideState: 1
+    m_Value: 0
+  NoiseTextureTiling:
+    m_OverrideState: 1
+    m_Value: 0.5
