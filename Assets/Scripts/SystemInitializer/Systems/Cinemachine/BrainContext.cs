@@ -8,5 +8,10 @@ namespace SystemInitializer.Systems.Cinemachine
         public CinemachineBrain Brain;
         public Action OnReachVirtualCamera;
         public Action OnStartReachingVirtualCamera;
+        
+        public bool isStartReached;
+        public bool isReached;
+
+        public bool checkNextFrame;
     }
 }

@@ -6,9 +6,7 @@ namespace SystemInitializer.Systems.Cinemachine
     public class BrainSystem : IAwakeSystem, IUpdateSystem
     {
         private BrainContext _context;
-        private bool isStartReached;
-        private bool isReached;
-        
+
         public void Awake()
         {
             _context = ContextsContainer.GetContext<BrainContext>();
@@ -16,20 +14,25 @@ namespace SystemInitializer.Systems.Cinemachine
             // _context.OnReachVirtualCamera += () => Debug.Log("reached");
         }
 
-
         public void Update()
         {
-            if (_context.Brain.IsBlending && !isStartReached)
+            if (_context.checkNextFrame)
             {
-                isStartReached = true;
-                isReached = false;
+                _context.checkNextFrame = false;
+                return;
+            }
+            
+            if (_context.Brain.IsBlending && !_context.isStartReached)
+            {
+                _context.isStartReached = true;
+                _context.isReached = false;
                 _context.OnStartReachingVirtualCamera?.Invoke();
             }
 
-            if (!_context.Brain.IsBlending && !isReached)
+            if (!_context.Brain.IsBlending && !_context.isReached)
             {
-                isStartReached = false;
-                isReached = true;
+                _context.isStartReached = false;
+                _context.isReached = true;
                 _context.OnReachVirtualCamera?.Invoke();
             }
         }
