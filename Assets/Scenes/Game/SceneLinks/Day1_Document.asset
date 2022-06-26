@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Day1_Document
   m_EditorClassIdentifier: 
   sceneAsset: {fileID: 102900000, guid: 698eb9332d4ec434c95d085ba9c427f5, type: 3}
-  scenePath: Assets\Scenes\Game\Day1_Document
+  scenePath: Assets/Scenes/Game/Day1_Document.unity
   sceneName: Day1_Document

@@ -66,7 +66,7 @@ public class BiSi_right : MonoBehaviour
     private void EndAction()
     {
         Debug.Log("EndAction");
-        // ContextsContainer.GetContext<SceneLoaderContext>().LoadScene(NextScene);
+        ContextsContainer.GetContext<PhoneContext>().DoCall();
     }
 
     private void MiniGamesErrorView()

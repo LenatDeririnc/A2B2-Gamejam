@@ -98,11 +98,16 @@ public class BiSi_left : MonoBehaviour
             PlayError();
             return;
         }
+
+        if (CharactersContext.CurrentCharacter() != null)
+        {
+            CharactersContext.CurrentCharacter().Sprite.gameObject.SetActive(false);
+        }
         
         CharactersContext.currentCharacterIndex += 1;
         
         if (CharactersContext.currentCharacterIndex < CharactersContext.characters.Length)
-            CharactersContext.CurrentCharacter().gameObject.SetActive(true);
+            CharactersContext.CurrentCharacter().Sprite.gameObject.SetActive(true);
 
         SetImage(CharactersContext.CurrentCharacter().InfoImage);
         
