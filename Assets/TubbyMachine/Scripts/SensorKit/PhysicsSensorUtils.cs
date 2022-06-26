@@ -71,8 +71,12 @@ namespace ThreeDISevenZeroR.SensorKit
         private static readonly List<int> sharedIndicesTemp = new List<int>(8192);
         private static Mesh lastInspectedMesh;
 
+#endif
+
         public static void DrawCollisionPoints(Vector3 collisionPoint, RaycastHit hit)
         {
+#if UNITY_EDITOR
+
             Gizmos.color = hasHitColor;
             Gizmos.DrawSphere(collisionPoint, 0.025f);
 
@@ -82,19 +86,26 @@ namespace ThreeDISevenZeroR.SensorKit
                 Gizmos.DrawLine(collisionPoint, hit.point);
                 Gizmos.DrawSphere(hit.point, 0.025f);
             }
+#endif
         }
 
         public static void DrawNormal(RaycastHit hit)
         {
+#if UNITY_EDITOR
+
             Gizmos.color = normalColor;
             Handles.color = normalColor;
             var normalEnd = hit.point + hit.normal * 0.5f;
             Gizmos.DrawLine(hit.point, hit.point + hit.normal * 0.5f);
             Handles.ConeHandleCap(0, normalEnd, Quaternion.LookRotation(hit.normal), 0.1f, Event.current.type);
+            
+#endif
         }
 
         public static void HighlightMeshVertices(RaycastHit hit)
         {
+#if UNITY_EDITOR
+
             var meshCollider = hit.collider as MeshCollider;
             
             if (meshCollider != null)
@@ -132,10 +143,14 @@ namespace ThreeDISevenZeroR.SensorKit
                 Gizmos.DrawLine(v1, v2);
                 Gizmos.DrawLine(v2, v0);
             }
+            
+#endif
         }
 
         public static void DrawHitInfo(RaycastHit hit, Vector3 position)
         {
+#if UNITY_EDITOR
+
             if (hit.collider == null)
                 return;
 
@@ -180,11 +195,15 @@ namespace ThreeDISevenZeroR.SensorKit
                     "triangleIndex: " + hit.triangleIndex, EditorStyles.whiteLabel);
                 Handles.EndGUI();
             }
+            
+#endif
         }
 
         public static void DrawCapsuleGizmo(Vector3 center, Quaternion rotation, Vector3 scale, 
             float width, float radius, AxisDirection direction)
         {
+#if UNITY_EDITOR
+
             Vector3 p1;
             Vector3 p2;
 
@@ -198,21 +217,29 @@ namespace ThreeDISevenZeroR.SensorKit
             Gizmos.DrawLine(p1 + rotation * Vector3.down * castRadius, p2 + rotation * Vector3.down * castRadius);
             Gizmos.DrawLine(p1 + rotation * Vector3.forward * castRadius, p2 + rotation * Vector3.forward * castRadius);
             Gizmos.DrawLine(p1 + rotation * Vector3.back * castRadius, p2 + rotation * Vector3.back * castRadius);
+            
+#endif
         }
 
         public static void DrawSphereGizmo(Vector3 center, Quaternion rotation, Vector3 scale, float radius)
         {
+#if UNITY_EDITOR
+
             Gizmos.matrix = Matrix4x4.TRS(center, rotation, Vector3.one);
             Gizmos.DrawWireSphere(Vector3.zero, GetScaledSphereRadius(radius, scale));
             Gizmos.matrix = Matrix4x4.identity;
+            
+#endif
         }
 
         public static void DrawBoxGizmo(Vector3 center, Quaternion rotation, Vector3 scale, Vector3 halfExtents)
         {
+#if UNITY_EDITOR
+
             Gizmos.matrix = Matrix4x4.TRS(center, rotation, scale);
             Gizmos.DrawWireCube(Vector3.zero, halfExtents * 2);
-            Gizmos.matrix = Matrix4x4.identity;
-        }
+            Gizmos.matrix = Matrix4x4.identity;            
 #endif
+        }
     }
 }
