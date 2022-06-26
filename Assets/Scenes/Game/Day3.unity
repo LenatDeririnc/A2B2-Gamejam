@@ -3658,6 +3658,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -13.27
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 81eeb812b4387d1478c0bfa5cf74e984, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbbaf72b9ca8d184fbe82f58406396ad, type: 2}
     - target: {fileID: 919132149155446097, guid: 81eeb812b4387d1478c0bfa5cf74e984, type: 3}
       propertyPath: m_Name
       value: Board Paper
@@ -4390,7 +4394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1527910219}
+  selectedFlowchart: {fileID: 8099360969469610605}
 --- !u!4 &1186553264
 Transform:
   m_ObjectHideFlags: 1
@@ -4736,7 +4740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0433eea1fc4819d47b4a7cadcc3a078c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cc52bd565706bb449419272650e635a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5780,17 +5784,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483883008}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1527910219 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8099360970522329487, guid: 993b53091d17844468d26a9497212536, type: 3}
-  m_PrefabInstance: {fileID: 8099360969469610604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1545292093
 GameObject:
   m_ObjectHideFlags: 0
@@ -8920,10 +8913,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 937720714117997874, guid: 993b53091d17844468d26a9497212536, type: 3}
-      propertyPath: NextScene
-      value: 
-      objectReference: {fileID: 11400000, guid: 31357fd691fa99b4ab97e92b9224127a, type: 2}
     - target: {fileID: 982506091245786064, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
@@ -9024,10 +9013,34 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
       objectReference: {fileID: 0}
+    - target: {fileID: 7275222566599734931, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 12aa461ca52185b42a6c6578c47a8fc3, type: 3}
     - target: {fileID: 7622301544997258245, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833617, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833617, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833622, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: ~Meow...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360968704833622, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c5827a8d5a53309448d71a773c9c80d5, type: 3}
     - target: {fileID: 8099360969431794116, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Name
       value: OnSceneLoadSystems
@@ -9084,6 +9097,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384245, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.047253903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360969686384246, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10c6f486f62d861428fcd0cf53ba2da3, type: 3}
+    - target: {fileID: 8099360969686384246, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d04c4f244d6ac24b9e89bb49838ad8f, type: 2}
     - target: {fileID: 8099360970003160589, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: field of view
       value: 40
@@ -9116,7 +9149,112 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.2527241
       objectReference: {fileID: 0}
+    - target: {fileID: 8099360970398043550, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 23331
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970398043550, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 40d5ed171c154a24aba785c180b149ca, type: 3}
+    - target: {fileID: 8099360970520951304, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 13321
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970520951304, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: bd5477a3a027f7a4eb6b2e78decfddac, type: 3}
+    - target: {fileID: 8099360970522329476, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: "No Toad, don\u2019t put it there\u2026 What would the princess think\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970522329476, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 54c6668501a7d1c4f8392d4e21e37d2e, type: 3}
+    - target: {fileID: 8099360970522329480, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: Nice of tha princess to invite us over to a picnic, eh Muigi? I hope
+        she made lots of spaghetti!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970522329480, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 35a764d9407393d41953369f981c6185, type: 3}
+    - target: {fileID: 8099360970522329487, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970527142896, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: Sequence
+      value: 12322
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970527142896, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: InfoImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bf65f9f5d89e0945b6ed605679a5f0f, type: 3}
     - target: {fileID: 8099360970585871357, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.080238394
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.080238394
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.080238394
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871358, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.307
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970585871359, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 293ff6622c1febe429b2323b52f59110, type: 3}
+    - target: {fileID: 8099360970585871359, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c38188874dd58d4c90f196fc4d70798, type: 2}
+    - target: {fileID: 8099360970643400580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400580, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400583, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: storyText
+      value: I just wanna die...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400583, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: voiceOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 92871dc41dc98f245a1db3803a2f3535, type: 3}
+    - target: {fileID: 8099360970643400585, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970643400585, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099360970712777648, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b008a76c3ba24414d95ca8d5f9d4acf8, type: 3}
+    - target: {fileID: 8099360970712777648, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e1abcb2273a78a4da5d30aa0081789c, type: 2}
+    - target: {fileID: 8099360970712777654, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -9126,6 +9264,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993b53091d17844468d26a9497212536, type: 3}
+--- !u!114 &8099360969469610605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8099360970643400585, guid: 993b53091d17844468d26a9497212536, type: 3}
+  m_PrefabInstance: {fileID: 8099360969469610604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8870114986536305312
 GameObject:
   m_ObjectHideFlags: 0

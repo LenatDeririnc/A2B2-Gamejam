@@ -6521,7 +6521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 8099360970585871359}
   Speech: {fileID: 8099360970398043549}
-  Sequence: 33231
+  Sequence: 32323
   InfoImage: {fileID: 21300000, guid: cd32b65ef6beea04c89396d87b24570c, type: 3}
   skip: 0
 --- !u!114 &8099360970398043549
@@ -6948,7 +6948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 8099360970712777648}
   Speech: {fileID: 8099360970520951305}
-  Sequence: 11232
+  Sequence: 13232
   InfoImage: {fileID: 21300000, guid: e9d50a6712995e64abf5c3e159422a56, type: 3}
   skip: 0
 --- !u!114 &8099360970520951305
@@ -7249,7 +7249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 8099360969686384246}
   Speech: {fileID: 8099360970527142897}
-  Sequence: 12312
+  Sequence: 21312
   InfoImage: {fileID: 21300000, guid: 4388e508ca9582340bb03c21a32a8baf, type: 3}
   skip: 0
 --- !u!114 &8099360970527142897
