@@ -18,6 +18,11 @@ namespace SceneManager
             LoadingCurtainContext.Show(() => StartCoroutine(LoadSceneCoroutine(sceneLink, LoadingCurtainContext.Hide)));
         }
 
+        public void LoadSceneImmediately(SceneLink sceneLink)
+        {
+            StartCoroutine(LoadSceneCoroutine(sceneLink, LoadingCurtainContext.Hide));
+        }
+
         private IEnumerator LoadSceneCoroutine(SceneLink sceneLink, Action onLoaded = null)
         {
             AsyncOperation waitSceneAsync = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneLink.sceneName);
