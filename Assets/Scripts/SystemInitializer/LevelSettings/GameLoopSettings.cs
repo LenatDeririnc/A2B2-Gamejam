@@ -9,8 +9,8 @@ namespace SystemInitializer.LevelSettings
     {
         public override void CreateSystems()
         {
-            _systems.Add(new MovementSystem());
             _systems.Add(new BrainSystem());
+            _systems.Add(new MovementSystem());
         }
     }
 }

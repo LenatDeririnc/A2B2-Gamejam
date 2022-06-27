@@ -1,41 +1,45 @@
 ﻿using System.Collections.Generic;
+using SystemInitializer.Systems.Cinemachine;
+using SystemInitializer.Systems.Movement;
 using UnityEngine;
 
 namespace SystemInitializer
 {
     public class OnSceneLoadSystems : MonoBehaviour
     {
+        protected SystemsContainer _systems;
+
         [SerializeField] 
-        private List<MonoBehaviourContext> _contextsList = new List<MonoBehaviourContext>();
-        
-        [SerializeField] private LevelSettings.LevelSettings _SelectedSettings;
+        private List<MonoBehaviourContext> _contextsList;
 
         private void Awake()
         {
             ContextsContainer.OverrideContexts(_contextsList);
-            _SelectedSettings.CreateSystems();
-            
-            _SelectedSettings.Systems.Awake();
+            _systems = new SystemsContainer();
+            _systems.Add(new BrainSystem());
+            _systems.Add(new MovementSystem());
+
+            _systems.Awake();
         }
         
         private void Start()
         {
-            _SelectedSettings.Systems.Start();
+            _systems.Start();
         }
 
         private void Update()
         {
-            _SelectedSettings.Systems.Update();
+            _systems.Update();
         }
 
         private void LateUpdate()
         {
-            _SelectedSettings.Systems.LateUpdate();
+            _systems.LateUpdate();
         }
 
         public void OnDestroy()
         {
-            _SelectedSettings.Systems.Terminate();
+            _systems.Terminate();
         }
     }
 }

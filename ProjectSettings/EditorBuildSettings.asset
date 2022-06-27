@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 633aa81a8ac1d5840bd85e9898e08a56
   - enabled: 1
-    path: Assets/Scenes/Game/Day1_Document.unity
-    guid: 698eb9332d4ec434c95d085ba9c427f5
-  - enabled: 1
     path: Assets/Scenes/Game/Day1.unity
     guid: bcdddca8e941aaa4bb8bc8e39218a729
+  - enabled: 1
+    path: Assets/Scenes/Game/Day2.unity
+    guid: 99c9f009d6bee3548ac4b00e52a05ba2
+  - enabled: 1
+    path: Assets/Scenes/Game/Day3.unity
+    guid: e4e92955f357cd149bbd466530a6bcfe
+  - enabled: 1
+    path: Assets/Ending/Scenes/EndingScene.unity
+    guid: 71f7212c2589eb745abf67726ba401e9
   m_configObjects: {}

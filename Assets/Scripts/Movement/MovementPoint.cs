@@ -37,6 +37,11 @@ namespace Movement
 
         public void SetButtons()
         {
+            ForwardButton.onClick.RemoveAllListeners();
+            BackButton.onClick.RemoveAllListeners();
+            LeftButton.onClick.RemoveAllListeners();
+            RightButton.onClick.RemoveAllListeners();
+            
             ForwardButton.onClick.AddListener(() => ExecuteNextPoint(ForwardPoint));
             BackButton.onClick.AddListener(() => ExecuteNextPoint(BackPoint));
             LeftButton.onClick.AddListener(() => ExecuteNextPoint(LeftPoint));
@@ -64,7 +69,7 @@ namespace Movement
             
             BrainContext.checkNextFrame = true;
             BrainContext.isReached = false;
-            BrainContext.OnReachVirtualCamera += OnEnterCamera;
+            BrainContext.OnReachVirtualCamera.AddListener(OnEnterCamera);
 
             VirtualCamera.Priority = 100;
             
@@ -81,7 +86,7 @@ namespace Movement
                 return;
             }
 
-            BrainContext.OnReachVirtualCamera -= OnEnterCamera;
+            BrainContext.OnReachVirtualCamera.RemoveListener(OnEnterCamera);
             OnExitCamera();
             
             MovementContext.CurrentMovementPoint = null;

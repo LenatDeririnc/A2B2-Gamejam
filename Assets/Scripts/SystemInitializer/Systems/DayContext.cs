@@ -1,5 +1,7 @@
-﻿using SceneManager;
+﻿using System;
+using SceneManager;
 using SceneManager.ScriptableObjects;
+using UnityEngine;
 
 namespace SystemInitializer.Systems
 {
@@ -11,5 +13,17 @@ namespace SystemInitializer.Systems
         {
             ContextsContainer.GetContext<SceneLoaderContext>().LoadScene(NextScene);
         }
+
+#if UNITY_EDITOR
+        
+        private void Update()
+        {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.P))
+            {
+                EndDay();
+            }
+        }
+        
+#endif
     }
 }

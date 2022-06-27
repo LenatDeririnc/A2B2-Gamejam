@@ -10,6 +10,8 @@ namespace SystemInitializer.Systems.Cinemachine
         public void Awake()
         {
             _context = ContextsContainer.GetContext<BrainContext>();
+            ContextsContainer.GetContext<BrainContext>().OnReachVirtualCamera.RemoveAllListeners();
+            ContextsContainer.GetContext<BrainContext>().OnStartReachingVirtualCamera.RemoveAllListeners();
             // _context.OnStartReachingVirtualCamera += () => Debug.Log("reaching");
             // _context.OnReachVirtualCamera += () => Debug.Log("reached");
         }
@@ -26,14 +28,14 @@ namespace SystemInitializer.Systems.Cinemachine
             {
                 _context.isStartReached = true;
                 _context.isReached = false;
-                _context.OnStartReachingVirtualCamera?.Invoke();
+                _context.OnStartReachingVirtualCamera.Invoke();
             }
 
             if (!_context.Brain.IsBlending && !_context.isReached)
             {
                 _context.isStartReached = false;
                 _context.isReached = true;
-                _context.OnReachVirtualCamera?.Invoke();
+                _context.OnReachVirtualCamera.Invoke();
             }
         }
     }

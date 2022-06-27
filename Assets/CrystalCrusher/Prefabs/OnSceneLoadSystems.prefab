@@ -1908,7 +1908,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 3870234160707171908}
   selectedCommands:
-  - {fileID: 3128466459348788719}
+  - {fileID: 3361137532532429226}
   variables: []
   description: 
   stepPause: 0
@@ -1936,7 +1936,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 284
     y: 200
-    width: 77.2
+    width: 60
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2039,7 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: Two months  ago...
+  storyText: Two months later...
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -5235,8 +5235,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099360970003160624}
-  m_LocalRotation: {x: 0.28736272, y: -0.6101294, z: 0.2527241, w: 0.6937545}
-  m_LocalPosition: {x: 6.876568, y: -1.842, z: -5.0389977}
+  m_LocalRotation: {x: 0.10171201, y: 0.62135255, z: -0.08180274, w: 0.77258265}
+  m_LocalPosition: {x: -12.270664, y: 0.647892, z: -43.566143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5268,7 +5268,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 30
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -8293,7 +8293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -8402,7 +8402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -8515,7 +8515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772402942958926611, guid: cc4a80574345eaa42a602f9eac3d19bf, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc4a80574345eaa42a602f9eac3d19bf, type: 3}
@@ -8743,7 +8743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -8926,7 +8926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -9027,7 +9027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8867797633130116099, guid: 67e74c8165da33b4daa0f36428d1d1d3, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e74c8165da33b4daa0f36428d1d1d3, type: 3}
@@ -9132,7 +9132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -9237,7 +9237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -9322,7 +9322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774938040665502604, guid: 7175f84a64cf8d84e921bd2d62a63b47, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     - target: {fileID: 4774938040665502605, guid: 7175f84a64cf8d84e921bd2d62a63b47, type: 3}
       propertyPath: m_RootOrder
@@ -9459,7 +9459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4544335966800136285, guid: 23d8a66c04932894aa87c7e1aa379f9f, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23d8a66c04932894aa87c7e1aa379f9f, type: 3}
@@ -9571,7 +9571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -9684,7 +9684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298403531225030673, guid: cfc47e3772e0b7f4c8a3b7108a0c98a8, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfc47e3772e0b7f4c8a3b7108a0c98a8, type: 3}
@@ -9789,7 +9789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -9890,7 +9890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
@@ -10362,7 +10362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288092815738399183, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7774296
+      value: 1.7768509
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19754cfe2ea29f4e9bc28cd03d10443, type: 3}

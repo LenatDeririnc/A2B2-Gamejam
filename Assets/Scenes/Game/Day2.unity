@@ -495,16 +495,6 @@ MonoBehaviour:
   m_Script: {fileID: 2121761494}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries:
-  - id: 0
-    category: 0
-    gameObject: {fileID: 978489687}
-  - id: 1
-    category: 0
-    gameObject: {fileID: 978489686}
-  - id: 2
-    category: 0
-    gameObject: {fileID: 978489685}
 --- !u!4 &127945771
 Transform:
   m_ObjectHideFlags: 19
@@ -3494,21 +3484,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa876445cf22724dba15a373b9ffc4d, type: 3}
---- !u!1 &978489685 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 326506857195593793, guid: aaa876445cf22724dba15a373b9ffc4d, type: 3}
-  m_PrefabInstance: {fileID: 978489684}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &978489686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 326506856939297618, guid: aaa876445cf22724dba15a373b9ffc4d, type: 3}
-  m_PrefabInstance: {fileID: 978489684}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &978489687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 326506857766631868, guid: aaa876445cf22724dba15a373b9ffc4d, type: 3}
-  m_PrefabInstance: {fileID: 978489684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987432113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9027,6 +9002,10 @@ PrefabInstance:
     - target: {fileID: 6797783454238864635, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7774296
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275222566599734931, guid: 993b53091d17844468d26a9497212536, type: 3}
+      propertyPath: m_Volume
+      value: 0.138
       objectReference: {fileID: 0}
     - target: {fileID: 7275222566599734931, guid: 993b53091d17844468d26a9497212536, type: 3}
       propertyPath: m_audioClip
