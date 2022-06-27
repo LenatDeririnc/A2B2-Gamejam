@@ -21,6 +21,11 @@ public class MiniGame : ButtonAction
         MoveToPoint();
     }
 
+    public override bool IsEnabled()
+    {
+        return !isDone;
+    }
+
     public void MoveToPoint()
     {
         void OnEnterAction()
